@@ -2,24 +2,29 @@ import java.util.Arrays;
 
 public class LinearSearch {
     public static void main(String[] args){
-        System.out.println("dsa tests...");
         int[] nums={31,32,91,5,-8,90,-28};
-        System.out.print(findmin(nums));
-        findmin(nums);
 
-        System.out.print("- - - - - - ");
+        System.out.println("find min...");
+        System.out.print(findmin(nums));
+        System.out.println(" ");
+        System.out.println("minINDEX= "+findminIndex(nums));
+
+        System.out.println(" ");
+        System.out.println("find max int..");
         System.out.print(findmax(nums));
 
-        System.out.print("- - - - - - ");
+        System.out.println(" ");
+        System.out.println("search int.. ");
         System.out.print(valuePresent(nums,32));
         System.out.print(valuePresent(nums,91));
 
 
-        System.out.print("- - - - - - ");
+        System.out.println(" ");
+        System.out.println("check value..");
         System.out.print(checkValue(nums,2));
 
-
-        System.out.println("- - - search char- - - ");
+        System.out.println(" ");
+        System.out.println("search char..");
         String name="Dimash";
         System.out.print(Arrays.toString(name.toCharArray()));
         System.out.print(searchChar(name,'d'));
@@ -83,6 +88,18 @@ public class LinearSearch {
             }
         }
         return min;
+    }
+//return index from array
+    static int findminIndex(int[] arr){
+        int min=arr[0];
+        int ind=0;
+        for(int a=1;a< arr.length;a++){
+            while(arr[a]<min){
+                min=arr[a];
+                ind=a;
+            }
+        }
+        return ind;
     }
 
 
